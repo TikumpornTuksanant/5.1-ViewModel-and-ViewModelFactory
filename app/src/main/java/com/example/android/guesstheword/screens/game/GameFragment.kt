@@ -70,6 +70,7 @@ class GameFragment : Fragment() {
 
     }
 
+
     /**
      * Resets the list of words and randomizes the order
      */
