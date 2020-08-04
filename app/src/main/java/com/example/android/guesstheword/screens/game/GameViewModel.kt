@@ -1,16 +1,11 @@
 package com.example.android.guesstheword.screens.game
-
 import android.util.Log
 import androidx.lifecycle.ViewModel
-
 class GameViewModel : ViewModel() {
-
     // The current word
     var word = ""
-
     // The current score
     var score = 0
-
     // The list of words - the front of the list is the next word to guess
     private lateinit var wordList: MutableList<String>
     /**
@@ -42,7 +37,6 @@ class GameViewModel : ViewModel() {
         )
         wordList.shuffle()
     }
-
     init {
         Log.i("GameViewModel", "GameViewModel created!")
     }
@@ -50,7 +44,6 @@ class GameViewModel : ViewModel() {
         super.onCleared()
         Log.i("GameViewModel", "GameViewModel destroyed!")
     }
-
     fun onSkip() {
         score--
         nextWord()
@@ -59,13 +52,10 @@ class GameViewModel : ViewModel() {
         score++
         nextWord()
     }
-
     private fun nextWord() {
         if (!wordList.isEmpty()) {
             //Select and remove a word from the list
             word = wordList.removeAt(0)
         }
-
     }
-
 }
